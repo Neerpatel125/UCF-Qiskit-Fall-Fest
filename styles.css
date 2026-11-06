@@ -95,6 +95,18 @@ h2 em { font-style: normal; color: var(--gold); }
 .program-row p { font-size: 16px; line-height: 1.65; margin: 0 0 25px; color: #c6c6ce; }
 .session-note { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.55; }
 .program-footnote { font-size: 14px; line-height: 1.65; color: var(--muted); margin: 24px 0 0; }
+.schedule { margin-top: 54px; scroll-margin-top: 28px; }
+.schedule-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 28px; }
+.schedule-heading h3 { margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -.035em; }
+.schedule-heading > p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.schedule-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.schedule-day-heading { border-top: 2px solid var(--gold); padding: 23px 0; }
+.schedule-day-heading h4 { margin: 0 0 10px; color: var(--gold); font-size: 24px; font-weight: 500; letter-spacing: -.025em; }
+.schedule-day-heading p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.schedule-list { list-style: none; margin: 0; padding: 0; }
+.schedule-list li { display: grid; grid-template-columns: 165px minmax(0, 1fr); align-items: baseline; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
+.schedule-time { color: var(--muted); font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.schedule-list p { margin: 0; font-size: 16px; line-height: 1.6; }
 .attend { padding-top: 16px; }
 .attend > .eyebrow { border-top: 1px solid var(--line); padding-top: 53px; }
 .attend-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10%; }
@@ -109,6 +121,7 @@ h2 em { font-style: normal; color: var(--gold); }
 .detail-index { display: flex; align-items: center; justify-content: center; flex: 0 0 30px; height: 30px; font-size: 12px; font-family: 'Courier New', monospace; border: 1px solid #ffc90465; color: var(--gold); }
 .visit-details h3 { font-size: 20px; line-height: 1.4; font-weight: 500; letter-spacing: -.015em; margin: 0 0 10px; }
 .visit-details p { font-size: 16px; line-height: 1.65; margin: 0; color: var(--muted); }
+.visit-details .text-link { margin-top: 15px; }
 .registration { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 12%; padding-top: 62px; padding-bottom: 64px; border-top: 1px solid #ffc90465; }
 .registration h2 { font-size: clamp(36px, 4.2vw, 62px); }
 .festival-art { margin-top: 30px; max-width: 340px; }
@@ -176,6 +189,11 @@ h2 em { font-style: normal; color: var(--gold); }
   .program-row + .program-row { margin-top: 18px; }
   .session-top { margin-bottom: 24px; }
   .session-title h3 { font-size: 29px; max-width: none; }
+  .schedule { margin-top: 40px; }
+  .schedule-heading h3 { font-size: 26px; }
+  .schedule-grid { grid-template-columns: 1fr; gap: 30px; }
+  .schedule-list li { grid-template-columns: 155px minmax(0, 1fr); gap: 14px; }
+  .schedule-time { font-size: 12px; }
   .attend { padding-top: 0; }
   .attend > .eyebrow { padding-top: 37px; }
   .attend-grid { grid-template-columns: 1fr; gap: 37px; }
@@ -204,6 +222,7 @@ h2 em { font-style: normal; color: var(--gold); }
   .hero-date { padding-left: 14px; }
   .hero-date strong { font-size: 27px; }
   .status-tag { max-width: 115px; }
+  .schedule-list li { grid-template-columns: 1fr; gap: 6px; padding: 17px 0; }
   .registration h2 { font-size: 38px; }
 }
 @media (prefers-reduced-motion: reduce) {
