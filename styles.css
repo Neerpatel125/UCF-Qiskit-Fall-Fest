@@ -93,6 +93,10 @@ h2 em { font-style: normal; color: var(--gold); }
 .session-mark { font-family: 'Courier New', monospace; font-size: 28px; }
 .session-title h3 { font-size: clamp(23px, 2.4vw, 34px); font-weight: 500; letter-spacing: -.04em; line-height: 1.2; margin: 0 0 24px; max-width: 260px; }
 .program-row p { font-size: 16px; line-height: 1.65; margin: 0 0 25px; color: #c6c6ce; }
+.program-row p a { text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.program-row p a:hover { color: var(--gold); }
+.program-row .button { align-self: flex-start; gap: 12px; }
+.download-note { margin: 8px 0 22px; color: var(--muted); font-size: 14px; line-height: 1.55; }
 .session-note { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.55; }
 .program-footnote { font-size: 14px; line-height: 1.65; color: var(--muted); margin: 24px 0 0; }
 .schedule { margin-top: 54px; scroll-margin-top: 28px; }
