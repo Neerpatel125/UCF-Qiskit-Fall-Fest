@@ -34,6 +34,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--purple); outlin
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; padding: 19px 23px; min-height: 54px; font-size: 16px; font-weight: 700; line-height: 1.3; border: 1px solid var(--gold); transition: background .2s, border-color .2s; }
 .button-dark { color: #000; background: var(--gold); }
 .button-dark:hover { background: #ffe066; border-color: #ffe066; }
+.button-discord { color: var(--purple); border-color: var(--purple); }
+.button-discord:hover { background: #be95ff1a; }
 .button span { font-size: 22px; line-height: 1; }
 .button-small { padding: 12px 19px; min-height: 44px; font-size: 14px; gap: 30px; }
 .hero { max-width: 1536px; margin: auto; padding: 24px 5% 0; background: var(--black); }
@@ -111,6 +113,9 @@ h2 em { font-style: normal; color: var(--gold); }
 .schedule-list li { display: grid; grid-template-columns: 165px minmax(0, 1fr); align-items: baseline; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
 .schedule-time { color: var(--muted); font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .schedule-list p { margin: 0; font-size: 16px; line-height: 1.6; }
+.schedule-session { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.schedule-session > p { flex: 1 1 11rem; }
+.schedule-session .button { gap: 10px; padding-inline: 14px; }
 .attend { padding-top: 16px; }
 .attend > .eyebrow { border-top: 1px solid var(--line); padding-top: 53px; }
 .attend-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10%; }
