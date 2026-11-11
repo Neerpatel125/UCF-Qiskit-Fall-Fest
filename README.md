@@ -4,20 +4,22 @@
 
 Festival website for **November 9–16, 2026** at the **University of Central Florida**.
 
-The site uses plain HTML, CSS, and JavaScript. No framework, package installation, build step, server, or secret is required. Registration opens the existing Google Form; Google Forms handles responses through its already configured Google Sheet.
+The site uses plain HTML, CSS, and JavaScript. No framework, package installation, build step, server, or secret is required. Registration is currently closed. When open, registration uses the existing Google Form; Google Forms handles responses through its already configured Google Sheet.
 
 ## Edit the website
 
 | File | Purpose |
 | --- | --- |
-| index.html | Event copy, layout, and registration links that work without JavaScript |
+| index.html | Event copy, layout, and registration-closed fallback that works without JavaScript |
 | styles.css | UCF black/gold theme, IBM color accents, mobile styles, and animations |
 | app.js | Registration state and animation pause control |
-| registration-config.js | Public Google Form responder URL |
+| registration-config.js | Registration availability and public Google Form responder URL |
 | assets/ | Supplied, unedited official artwork and logos |
 | .nojekyll | Serve the static website without Jekyll processing |
 
-When changing registration to another Google Form, update its responder URL in both `registration-config.js` and all three registration anchors in `index.html`. Never use a form editor or response spreadsheet URL in public website files. Changing the response destination is managed separately inside Google Forms.
+Set `isOpen` in `registration-config.js` to control registration availability. It is currently `false`: the website shows “Registration is closed” and does not link to the form. The HTML also defaults to the closed state when JavaScript is unavailable. To reopen registration, set `isOpen` to `true` and verify `formUrl`; JavaScript will restore the form links and open-registration copy.
+
+When changing registration to another Google Form, update `formUrl` in `registration-config.js`. Never use a form editor or response spreadsheet URL in public website files. Accepting responses and changing the response destination are managed separately inside Google Forms; the website setting does not change the form itself.
 
 Keep local asset references relative (for example, `./assets/Picture1.png`), so they work when the website is hosted in a subdirectory. Do not change them to `/assets/...`, which would refer to the domain root.
 

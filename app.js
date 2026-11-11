@@ -1,4 +1,5 @@
 (() => {
+  const registrationOpen = window.FESTIVAL_REGISTRATION?.isOpen === true;
   const rawUrl = window.FESTIVAL_REGISTRATION?.formUrl;
   let formUrl = null;
   try {
@@ -9,9 +10,12 @@
     )) formUrl = url.href;
   } catch { /* Registration remains honestly unavailable until configured. */ }
 
-  if (formUrl) {
-    const finalLink = document.querySelector('#registration-form-link');
+  const finalLink = document.querySelector('#registration-form-link');
+  if (registrationOpen && formUrl) {
     finalLink.hidden = false;
+    document.querySelectorAll('[data-register]').forEach(link => {
+      link.textContent = link.dataset.register;
+    });
     document.querySelectorAll('[data-register], #registration-form-link').forEach(link => {
       link.href = formUrl;
       link.target = '_blank';
@@ -21,15 +25,22 @@
     document.querySelector('#registration-status').textContent = 'Registration is open';
     document.querySelector('#registration-description').textContent = 'Register through our Google Form.';
   } else {
-    document.querySelector('#registration-form-link').hidden = true;
+    finalLink.hidden = true;
+    finalLink.removeAttribute('href');
+    finalLink.removeAttribute('target');
+    finalLink.removeAttribute('rel');
+    finalLink.removeAttribute('aria-label');
     document.querySelectorAll('[data-register]').forEach(link => {
       link.href = '#register';
       link.removeAttribute('target');
       link.removeAttribute('rel');
       link.removeAttribute('aria-label');
+      link.textContent = registrationOpen ? 'Registration opens soon' : 'Registration closed';
     });
-    document.querySelector('#registration-status').textContent = 'Registration opens soon';
-    document.querySelector('#registration-description').textContent = 'We’re getting registration ready. Check back here for the form and final event details.';
+    document.querySelector('#registration-status').textContent = registrationOpen ? 'Registration opens soon' : 'Registration is closed';
+    document.querySelector('#registration-description').textContent = registrationOpen
+      ? 'We’re getting registration ready. Check back here for the form and final event details.'
+      : 'We are no longer accepting registrations for IBM Qiskit Fall Fest 2026.';
   }
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
