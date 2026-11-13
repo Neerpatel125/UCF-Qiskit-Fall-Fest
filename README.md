@@ -2,7 +2,7 @@
 
 **[Visit the website](https://neerpatel125.github.io/UCF-Qiskit-Fall-Fest/)**
 
-Festival website for **November 9–16, 2026** at the **University of Central Florida**.
+Festival website for **November 9–18, 2026** at the **University of Central Florida**.
 
 The site uses plain HTML, CSS, and JavaScript. No framework, package installation, build step, server, or secret is required. Registration is currently closed. When open, registration uses the existing Google Form; Google Forms handles responses through its already configured Google Sheet.
 
