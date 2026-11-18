@@ -116,6 +116,9 @@ h2 em { font-style: normal; color: var(--gold); }
 .schedule-session { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
 .schedule-session > p { flex: 1 1 11rem; }
 .schedule-session .button { gap: 10px; padding-inline: 14px; }
+.schedule-downloads { display: flex; flex-wrap: wrap; flex-basis: 100%; gap: 8px; max-width: 22rem; }
+.schedule-downloads .button { flex: 1 1 7rem; gap: 6px; padding: 8px 10px; font-size: 13px; }
+.schedule-downloads .button span { font-size: 18px; }
 .attend { padding-top: 16px; }
 .attend > .eyebrow { border-top: 1px solid var(--line); padding-top: 53px; }
 .attend-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10%; }
